@@ -113,6 +113,15 @@ button {
         font-size: 2rem;
         margin: 20px 0;
     }
+    #ContenairBtn {
+        display: flex;
+        justify-content: space-around;
+        width : 350px;
+    }
+}
+
+#btnSuivant {
+    display: none;
 }
 
 @media (max-width: 600px) {
@@ -150,5 +159,16 @@ button {
     #btnStart {
         font-size: 1.5rem;
         padding: 10px 30px;
+    }
+
+    #ContenairBtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width : 350px;
+        button {
+            margin-bottom: 15px;
+            width : 200px;
+        }
     }
 }

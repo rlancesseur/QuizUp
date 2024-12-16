@@ -10,6 +10,7 @@ const resultat = document.querySelector('#resultat')
 const btnCategorie = document.querySelector('#btnCategorie')
 const btnReset = document.querySelector('#btnReset')
 const btnStart = document.querySelector('#btnStart')
+const btnSuivant = document.querySelector('#btnSuivant')
 let score = 0
 let questionActuelle = 0
 
@@ -39,11 +40,16 @@ const verifieReponse = (questions) => {
         if(score === 0) {
             resultat.innerHTML = "Dommage, vous n'avez obtenu aucun point"
         }
-        else if(score >= 1 && score < questions.length) {
+        else if(score >= 1 && score < questions.length / 2) {
             resultat.innerHTML = "Vous avez obtenu " + score + " points sur " + questions.length
         }
+        else if(score >= questions.length / 2 && score < questions.length -1) {
+            resultat.innerHTML = "Vous avez obtenu " + score + " points sur " + questions.length + ". Vous pouvez passer au niveau suivant !"
+            btnSuivant.style.display ="block"
+        }
         else {
-            resultat.innerHTML = "Felicitations ! Vous avez toutes les bonnes réponses."
+            resultat.innerHTML = "Felicitations ! Vous avez toutes les bonnes réponses. Vous pouvez passer au niveau suivant !"
+            btnSuivant.style.display ="block"
         }
     }
 }
@@ -61,17 +67,6 @@ const lancerQuizz = (categorie, difficulte) => {
     })
 }
 
-//A refaire
-const resetQuizz = () => {
-    pageResultat.style.display = "none"
-    pageMenu.style.display = "flex"
-    score = 0
-    questionActuelle = 0
-    zoneQuestion.innerHTML = ""
-    zoneScore.innerHTML = "0"
-    resultat.innerHTML = ""
-}
-
 
 btnStart.addEventListener("click", () => {
     const categorie = listeCategorie.value
@@ -82,6 +77,24 @@ btnStart.addEventListener("click", () => {
     lancerQuizz(categorie, difficulte)
 })
 
+//A refaire
 btnReset.addEventListener("click", () => {
-    resetQuizz()
+    score = 0
+    questionActuelle = 0
+    pageResultat.style.display = "none"
+    pageMenu.style.display = "flex"
+    zoneQuestion.innerHTML = ""
+    zoneScore.innerHTML = "0"
+    resultat.innerHTML = ""
+})
+
+//A refaire
+btnSuivant.addEventListener("click", () => {
+    score = 0
+    questionActuelle = 0
+    niveauDifficulte.value++
+    pageResultat.style.display = "none"
+    pageQuestion.style.display ="flex"
+    
+    lancerQuizz(listeCategorie.value, niveauDifficulte.value)
 })
