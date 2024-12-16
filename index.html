@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet">
+    <title>QuizUp</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1><a href="#">QuizUp</a></h1>
+
+    <div id="pageMenu">
+        <div id="zoneCat">
+            <p>Selectionner une catégorie : </p>
+            <select name="typeCategorie" id="categories">
+                <option value="musique">Musique</option>
+                <option value="jeuxvideo">Jeux video</option>
+                <option value="twitch">Twitch</option>
+            </select>
+        </div>
+        <div id="zoneDiff">
+            <p>Selectionner un niveau de difficulté : </p>
+            <select name="niveauDifficulte" id="difficulte">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+        </div>
+        
+        <button id="btnStart">Commencer la partie</button>
+
+    </div>
+
+    <div id="pageQuestions">
+        <div id="question"></div>
+        <input type="text" id="reponse">
+        <button id="btnValider">Valider</button>
+        <div id="zoneScore">Score : <span id="score">0</span></div>
+    </div>
+
+    <div id="pageResultat">
+        <div id="resultat"></div>
+        <button id="btnReset">Retour menu</button>
+    </div>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
