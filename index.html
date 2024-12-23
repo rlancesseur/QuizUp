@@ -8,10 +8,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Slackey&display=swap" rel="stylesheet">
     <title>QuizUp</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
 
     <h1><a href="https://rlancesseur.github.io/QuizUp/">QuizUp</a></h1>
+
+    <div id="pagePseudo">
+        <div id="zoneInput">
+            <label for="inputPseudo">Votre pseudo : </label>
+            <input type="text" id="inputPseudo">
+        </div>
+        <button id="btnPseudo">Valider</button>
+    </div>
 
     <div id="pageMenu">
         <div id="zoneCat">
@@ -35,14 +44,13 @@
         </div>
         
         <button id="btnStart">Commencer la partie</button>
-
     </div>
 
     <div id="pageQuestions">
         <div id="question"></div>
         <input type="text" id="reponse">
         <button id="btnValider">Valider</button>
-        <div id="zoneScore">Score : <span id="score">0</span></div>
+        <div id="zoneScore">Score de <span id="pseudo"></span> : <span id="score">0</span></div>
     </div>
 
     <div id="pageResultat">
@@ -53,8 +61,6 @@
             <button id="btnSuivant">Niveau suivant</button>
         </div>
     </div>
-
-    <script src="js/script.js"></script>
     
 </body>
 </html>

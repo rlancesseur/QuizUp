@@ -23,8 +23,31 @@ body {
     color: #e2a600;
 }
 
-#pageMenu {
+#pagePseudo {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    label {
+        font-size: 1.8rem;
+    }
+}
+
+#inputPseudo {
+    background-color: var(--fourth-color);
+    color: #f0f0f0;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1rem;
+    border : none;
+}
+
+#zoneInput {
+    margin-bottom: 20px;
+}
+
+#pageMenu {
+    display: none;
     flex-direction: column;
     align-items: center;
 }
